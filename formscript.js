@@ -37,7 +37,7 @@ $(document).ready(function() {
     	const formData = saveInput();
 
     	$.ajax({
-    		url: 'https://formcarry.com/s/z3-AJDUQMbE',
+    		url: 'https://formcarry.com/s/5iAMBhlVwiU',
     		method: 'POST',
     		dataType: 'json',
     		data: formData,
