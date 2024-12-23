@@ -1,0 +1,1431 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="content-language" content="ru">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="192x192" href="5299">
+<link rel="icon" href="photo/drupal-coder.png" type="image/png">
+<link rel="alternate" hreflang="ru" href="index.html">
+<link rel="canonical" href="index.html">
+<link rel="shortlink" href="index.html">
+
+    <title>Поддержка сайта на Drupal - Доработка Друпал сайтов от профессионалов</title>
+    <link rel="stylesheet" media="all" href="sites/default/files/css1/css_1.css?delta=0&amp;language=ru&amp;theme=bootstrap_dc&amp;include=eJxtUlGWgyAMvBCVjz2QL2KkdKNxSWzrnn6poMW-_YHMTEjCgOOI9vazYFyNY-LY8dP2OMBCmogk8uTwkNowUZjQfuCc2cdlBmrmyD6iyPsQMfT2hIxn9oQtTECrBif2kzCTbyn4q74GqmIjqyiOtgNB0zGraITZgmoM3aIoFalXHKuktnfWE3dAF9E1ze3P2gEu4mKYVc5y785YkI1HuYYhkGK0VXzyY-A4Gpg0dKy27Jl0MKu7Qr5LxALb-1dxozm4s1qD3CpMqWuyrslPmcvfAz7Ebmszcr9Q8oLgd7X9thWQjcw8aAK6C1XSq8jMcZeelcSdYLynO5dTgd9RM2IfYK--2VHA6xNsD3CgEs5MazJxz3MEIhRk75w-1xiOgSMMJXpgN5uU6L7ttpZ4u1xFN1un_yxrl3B6tTQ3sW_gBs8_n9I4HA">
+<link rel="stylesheet" media="all" href="sites/default/files/css1/css_2.css?delta=1&amp;language=ru&amp;theme=bootstrap_dc&amp;include=eJxtUlGWgyAMvBCVjz2QL2KkdKNxSWzrnn6poMW-_YHMTEjCgOOI9vazYFyNY-LY8dP2OMBCmogk8uTwkNowUZjQfuCc2cdlBmrmyD6iyPsQMfT2hIxn9oQtTECrBif2kzCTbyn4q74GqmIjqyiOtgNB0zGraITZgmoM3aIoFalXHKuktnfWE3dAF9E1ze3P2gEu4mKYVc5y785YkI1HuYYhkGK0VXzyY-A4Gpg0dKy27Jl0MKu7Qr5LxALb-1dxozm4s1qD3CpMqWuyrslPmcvfAz7Ebmszcr9Q8oLgd7X9thWQjcw8aAK6C1XSq8jMcZeelcSdYLynO5dTgd9RM2IfYK--2VHA6xNsD3CgEs5MazJxz3MEIhRk75w-1xiOgSMMJXpgN5uU6L7ttpZ4u1xFN1un_yxrl3B6tTQ3sW_gBs8_n9I4HA">
+<link rel="stylesheet" media="all" href="sites/default/files/css1/css_3.css?delta=2&amp;language=ru&amp;theme=bootstrap_dc&amp;include=eJxtUlGWgyAMvBCVjz2QL2KkdKNxSWzrnn6poMW-_YHMTEjCgOOI9vazYFyNY-LY8dP2OMBCmogk8uTwkNowUZjQfuCc2cdlBmrmyD6iyPsQMfT2hIxn9oQtTECrBif2kzCTbyn4q74GqmIjqyiOtgNB0zGraITZgmoM3aIoFalXHKuktnfWE3dAF9E1ze3P2gEu4mKYVc5y785YkI1HuYYhkGK0VXzyY-A4Gpg0dKy27Jl0MKu7Qr5LxALb-1dxozm4s1qD3CpMqWuyrslPmcvfAz7Ebmszcr9Q8oLgd7X9thWQjcw8aAK6C1XSq8jMcZeelcSdYLynO5dTgd9RM2IfYK--2VHA6xNsD3CgEs5MazJxz3MEIhRk75w-1xiOgSMMJXpgN5uU6L7ttpZ4u1xFN1un_yxrl3B6tTQ3sW_gBs8_n9I4HA">
+<link rel="stylesheet" media="all" href="sites/default/files/css1/css_4.css?delta=3&amp;language=ru&amp;theme=bootstrap_dc&amp;include=eJxtUlGWgyAMvBCVjz2QL2KkdKNxSWzrnn6poMW-_YHMTEjCgOOI9vazYFyNY-LY8dP2OMBCmogk8uTwkNowUZjQfuCc2cdlBmrmyD6iyPsQMfT2hIxn9oQtTECrBif2kzCTbyn4q74GqmIjqyiOtgNB0zGraITZgmoM3aIoFalXHKuktnfWE3dAF9E1ze3P2gEu4mKYVc5y785YkI1HuYYhkGK0VXzyY-A4Gpg0dKy27Jl0MKu7Qr5LxALb-1dxozm4s1qD3CpMqWuyrslPmcvfAz7Ebmszcr9Q8oLgd7X9thWQjcw8aAK6C1XSq8jMcZeelcSdYLynO5dTgd9RM2IfYK--2VHA6xNsD3CgEs5MazJxz3MEIhRk75w-1xiOgSMMJXpgN5uU6L7ttpZ4u1xFN1un_yxrl3B6tTQ3sW_gBs8_n9I4HA">
+<link rel="stylesheet" media="all" href="sites/default/files/css1/css_5.css?delta=12&amp;language=ru&amp;theme=bootstrap_dc&amp;include=eJxtUlGWgyAMvBCVjz2QL2KkdKNxSWzrnn6poMW-_YHMTEjCgOOI9vazYFyNY-LY8dP2OMBCmogk8uTwkNowUZjQfuCc2cdlBmrmyD6iyPsQMfT2hIxn9oQtTECrBif2kzCTbyn4q74GqmIjqyiOtgNB0zGraITZgmoM3aIoFalXHKuktnfWE3dAF9E1ze3P2gEu4mKYVc5y785YkI1HuYYhkGK0VXzyY-A4Gpg0dKy27Jl0MKu7Qr5LxALb-1dxozm4s1qD3CpMqWuyrslPmcvfAz7Ebmszcr9Q8oLgd7X9thWQjcw8aAK6C1XSq8jMcZeelcSdYLynO5dTgd9RM2IfYK--2VHA6xNsD3CgEs5MazJxz3MEIhRk75w-1xiOgSMMJXpgN5uU6L7ttpZ4u1xFN1un_yxrl3B6tTQ3sW_gBs8_n9I4HA">
+    <meta name="cmsmagazine" content="3d47b05beba40f3816d9741ee18c01a5">
+    <link rel="prefetch" as="font" href="fonts/Montserrat/Montserrat-Bold.woff2" crossorigin="anonymous">
+    <link rel="prefetch" as="font" href="fonts/Montserrat/Montserrat-Medium.woff2" crossorigin="anonymous">
+    <link rel="prefetch" as="font" href="fonts/Montserrat/Montserrat-Regular.woff2" crossorigin="anonymous">
+    <link rel="prefetch" as="font" href="fonts/fontawesome/webfonts/fa-brands-400.woff2" crossorigin="anonymous">
+    <meta name="format-detection" content="telephone=no">
+
+</head>
+  <body class="page-node-1 path-node page-node-type-page has-glyphicons">
+          <script src="optimize.js"></script>
+      <a href="#main-content" class="visually-hidden focusable skip-link">
+          Перейти к основному содержанию
+      </a>
+
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas="">
+          <header class="navbar navbar-default" id="navbar" role="banner">
+              <div class="container">
+                  <div class="navbar-header">
+                      <div class="region region-navigation">
+                          <section id="block-globalsitetagadwords" class="block block-block-content block-block-content27617f8e-58d1-4a2a-9f23-31eab95a43c8 clearfix"></section>
+                          <a class="logo navbar-btn pull-left" href="index.htm" title="Главная" rel="home">
+                              <img src="photo/logo-in.svg" alt="Главная" width="156" height="31">
+                          </a>
+
+                      </div>
+                  </div>
+
+                  <div class="navbar-collapse-wrapper">
+                      <div class="navbar-collapse collapse">
+                          <div class="region region-navigation-collapsible">
+                              <nav role="navigation" aria-labelledby="block-bootstrap-dc-main-menu-menu" id="block-bootstrap-dc-main-menu">
+                                  <h2 class="visually-hidden" id="block-bootstrap-dc-main-menu-menu">Основная навигация</h2>
+
+                                  <ul class="menu nav navbar-nav">
+                                      <li>
+                                          <a href="index.html" data-drupal-link-system-path="node/1" class="is-active">Поддержка Drupal</a>
+                                      </li>
+                                      <li class="expanded dropdown">
+                                          <a href="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" class="dropdown-toggle" data-toggle="dropdown">DevOps <span class="caret"></span></a>
+                                          <div class="container-fluid dropdown-menu-wrapper">
+                                              <ul class="menu dropdown-menu">
+                                                  <li>
+                                                      <a href="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" data-drupal-link-system-path="node/4">Миграция</a>
+                                                  </li>
+                                                  <li>
+                                                      <a href="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" data-drupal-link-system-path="node/3">Бэкапы</a>
+                                                  </li>
+                                                  <li>
+                                                      <a href="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" data-drupal-link-system-path="node/9">Аудит безопасности</a>
+                                                  </li>
+                                                  <li>
+                                                      <a href="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" data-drupal-link-system-path="node/5">Оптимизация скорости</a>
+                                                  </li>
+                                                  <li>
+                                                      <a href="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" data-drupal-link-system-path="node/99">Переезд на https</a>
+                                                  </li>
+                                              </ul>
+                                          </div>
+
+                                      </li>
+                                      <li>
+                                          <a href="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" data-drupal-link-system-path="blog">Блог</a>
+                                      </li>
+                                      <li class="expanded dropdown">
+                                          <a href="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" class="dropdown-toggle" data-toggle="dropdown">Продвижение <span class="caret"></span></a>
+                                          <div class="container-fluid dropdown-menu-wrapper">
+                                              <ul class="menu dropdown-menu">
+                                                  <li>
+                                                      <a href="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" data-drupal-link-system-path="node/111">Реклама</a>
+                                                  </li>
+                                              </ul>
+                                          </div>
+
+                                      </li>
+                                      <li class="expanded dropdown">
+                                          <a href="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" class="dropdown-toggle" data-toggle="dropdown">О нас <span class="caret"></span></a>
+                                          <div class="container-fluid dropdown-menu-wrapper">
+                                              <ul class="menu dropdown-menu">
+                                                  <li>
+                                                      <a href="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" data-drupal-link-system-path="team">Команда</a>
+                                                  </li>
+                                                  <li>
+                                                      <a href="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" data-drupal-link-system-path="node/135">Drupalgive</a>
+                                                  </li>
+                                                  <li>
+                                                      <a href="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" data-drupal-link-system-path="node/10">Курсы Drupal</a>
+                                                  </li>
+                                                  <li>
+                                                      <a href="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" data-drupal-link-system-path="vacancies">Вакансии</a>
+                                                  </li>
+                                              </ul>
+                                          </div>
+
+                                      </li>
+                                      <li>
+                                          <a href="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" data-drupal-link-system-path="happy-customers">Проекты</a>
+                                      </li>
+                                      <li>
+                                          <a href="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" data-drupal-link-system-path="node/86">Контакты</a>
+                                      </li>
+                                  </ul>
+                              </nav>
+                          </div>
+                      </div>
+                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                      </button>
+                  </div>
+              </div>
+          </header>
+
+
+          <div class="page-header-big" role="heading" aria-level="1">
+              <div class="container">
+              </div>
+          </div>
+
+          <div class="page-subheader">
+              <div class="region region-subheader">
+                  <section id="block-support-main" class="block block-block-content block-block-content2f979322-24f2-4ba0-a45e-930ca3dc84a6 clearfix">
+
+                      <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item">
+                          <div class="support-main">
+                              <div class="support-main-background">
+                                  <video autoplay="autoplay" loop="" class="fillWidth" playsinline="" preload="auto" muted="">
+                                      <source src="photo/video.mp4" type="video/mp4">Your browser does not support the video tag. I suggest you upgrade your browser.
+                                  </video>
+                              </div>
+                              <div class="container">
+                                  <div class="row">
+
+                                      <div class="col-md-6">
+                                          <h1 class="page-title">Поддержка и <br> развитие сайтов на Drupal</h1>
+                                          <div class="support-main-description">
+                                              Любые доработки ваших сайтов на CMS Drupal. <br> Любые объемы, любая сложность
+                                          </div>
+                                          <div class="support-main-wrapper">
+                                              <a href="#supportForm" class="support-main-btn flowing-scroll">Связаться</a>
+                                          </div>
+                                      </div>
+
+                                      <div class="col-md-6">
+                                          <div class="row main__row-flex">
+
+                                              <div class="col-md-8 col-sm-4"></div>
+                                              <div class="col-md-4 col-sm-8">
+                                                  <div class="row support-achievements main__row-flex support-achievements-Big main__short-achievements">
+                                                      <div class="col-md-12 col-sm-6 col-xs-6 support-achievement main__short-achievement">
+                                                          <div class="support-achievement-wrapper">
+                                                              <div class="support-achievement-title">3+</div>
+                                                              <div class="support-achievement-description">
+                                                                  средний опыт <br> специалистов более <br> 3 лет
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                      <div class="col-md-12 col-sm-6 col-xs-6 support-achievement main__short-achievement">
+                                                          <div class="support-achievement-wrapper">
+                                                              <div class="support-achievement-title">484+</div>
+                                                              <div class="support-achievement-description">
+                                                                  Проектов <br> на поддержке
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                      <div class="col-md-12 col-sm-6 col-xs-6 support-achievement main__short-achievement">
+                                                          <div class="support-achievement-wrapper">
+                                                              <div class="support-achievement-title">230023+</div>
+                                                              <div class="support-achievement-description">
+                                                                  часов поддержки <br> сайтов на Drupal
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                      <div class="col-md-12 col-sm-6 col-xs-6 support-achievement main__short-achievement">
+                                                          <div class="support-achievement-wrapper">
+                                                              <div class="support-achievement-title">50+</div>
+                                                              <div class="support-achievement-description">
+                                                                  модулей и тем <br> в формате DrupalGive
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                  </section>
+              </div>
+          </div>
+
+          <div class="main-wrapper">
+              <div role="main" class="main-container container js-quickedit-main-content">
+
+                  <div class="row">
+                      <section class="col-sm-12">
+
+                          <a id="main-content"></a>
+                          <div class="region region-content">
+                              <div data-drupal-messages-fallback="" class="hidden"></div>
+                              <article data-history-node-id="1" about="https://drupal-coder.ru/support" typeof="schema:WebPage" class="page full clearfix">
+                                  <span property="schema:name" content="Поддержка Drupal" class="hidden"></span>
+                                  <div class="content">
+                                      <div property="schema:text" class="field field--name-body field--type-text-with-summary field--label-hidden field--item"></div>
+                                  </div>
+                              </article>
+                          </div>
+
+                      </section>
+                  </div>
+
+              </div>
+
+              <div class="region region-fw-content">
+                  <section id="block-podderzhkasaytovkompetencii" class="block block-block-content block-block-content98f5a882-8740-43a4-ba85-7d4e48bd6007 clearfix">
+
+                      <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item">
+                          <div class="competencies">
+                              <div class="container">
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                          <h2 class="block-title">19  лет совершенствуем <br> компетенции в Друпал <br> поддержке!</h2>
+                                          <div class="competencies-description">
+                                              Разрабатываем и оптимизируем модули, расширяем <br> функциональность сайтов, обновляем дизайн
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="row row-flex competencies-row">
+                                      <div class="col-sm-3 col-xs-6">
+                                          <div class="competency">
+                                              <div class="competency-wrapper">
+                                                  <div class="competency-header">
+                                                      <div class="competency-icon">
+                                                          <img alt="Добавление информации на сайт, создание новых разделов" src="themes/custom/bootstrap_dc/images/competency-1.svg" class="img-responsive" loading="lazy">
+                                                      </div>
+                                                  </div>
+                                                  <div class="competency-body">
+                                                      Добавление <br> информации на сайт,<br> создание новых <br> разделов
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="col-sm-3 col-xs-6">
+                                          <div class="competency">
+                                              <div class="competency-wrapper">
+                                                  <div class="competency-header">
+                                                      <div class="competency-icon">
+                                                          <img alt="Разработка" src="themes/custom/bootstrap_dc/images/competency-3.svg" class="img-responsive" loading="lazy">
+                                                      </div>
+                                                  </div>
+                                                  <div class="competency-body">
+                                                      Разработка <br> и оптимизация <br> модулей сайта
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="col-sm-3 col-xs-6">
+                                          <div class="competency">
+                                              <div class="competency-wrapper">
+                                                  <div class="competency-header">
+                                                      <div class="competency-icon">
+                                                          <img alt="Интеграция" src="themes/custom/bootstrap_dc/images/competency-2.svg" class="img-responsive" loading="lazy">
+                                                      </div>
+                                                  </div>
+                                                  <div class="competency-body">
+                                                      Интеграция с CRM, <br> 1C, платежными <br> системами, любыми <br> веб-сервисами
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="col-sm-3 col-xs-6">
+                                          <div class="competency">
+                                              <div class="competency-wrapper">
+                                                  <div class="competency-header">
+                                                      <div class="competency-icon">
+                                                          <img alt="Ecommerce" src="themes/custom/bootstrap_dc/images/shopping-cart.svg" class="img-responsive" loading="lazy">
+                                                      </div>
+                                                  </div>
+                                                  <div class="competency-body">
+                                                      Ecommerce, <br> собственные модули<br> интеграции
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="col-sm-3 col-xs-6">
+                                          <div class="competency">
+                                              <div class="competency-wrapper">
+                                                  <div class="competency-header">
+                                                      <div class="competency-icon">
+                                                          <img alt="Безопасность" src="themes/custom/bootstrap_dc/images/competency-5.svg" class="img-responsive" loading="lazy">
+                                                      </div>
+                                                  </div>
+                                                  <div class="competency-body">
+                                                      Аудит и мониторинг <br> безопасности Drupal <br> сайтов
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="col-sm-3 col-xs-6">
+                                          <div class="competency">
+                                              <div class="competency-wrapper">
+                                                  <div class="competency-header">
+                                                      <div class="competency-icon">
+                                                          <img alt="Миграция" src="themes/custom/bootstrap_dc/images/competency-6.svg" class="img-responsive" loading="lazy">
+                                                      </div>
+                                                  </div>
+                                                  <div class="competency-body">
+                                                      Миграция, импорт <br> контента и апгрейд <br> Drupal
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="col-sm-3 col-xs-6">
+                                          <div class="competency">
+                                              <div class="competency-wrapper">
+                                                  <div class="competency-header">
+                                                      <div class="competency-icon">
+                                                          <img alt="Оптимизация" src="themes/custom/bootstrap_dc/images/competency-7.svg" class="img-responsive" loading="lazy">
+                                                      </div>
+                                                  </div>
+                                                  <div class="competency-body">
+                                                      Оптимизация <br> и ускорение <br> Drupal-сайтов
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="col-sm-3 col-xs-6">
+                                          <div class="competency">
+                                              <div class="competency-wrapper">
+                                                  <div class="competency-header">
+                                                      <div class="competency-icon">
+                                                          <img alt="SEO" src="themes/custom/bootstrap_dc/images/competency-8.svg" class="img-responsive" loading="lazy">
+                                                      </div>
+                                                  </div>
+                                                  <div class="competency-body">
+                                                      Веб-маркетинг, <br> консультации <br> и работы по SEO
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                  </section>
+
+
+                  <section id="block-podderzhkasaytovpodderzhkaotdrupalcoder" class="block block-block-content block-block-content486391f8-682f-4af0-bfc8-30feb6ebc401 clearfix">
+
+                      <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item">
+                          <div class="advantages with-expertise">
+                              <div class="container">
+                                  <div class="row">
+                                      <div class="col-md-12">
+                                          <h2 class="block-title">Поддержка <br> от Drupal-coder</h2>
+                                      </div>
+                                  </div>
+                                  <div class="row row-flex advantages-row">
+                                      <div class="col-sm-6 col-md-3 col-xs-12 advantage-col">
+                                          <div class="advantage">
+                                              <div class="advantage-wrapper">
+                                                  <div class="advantage-header">
+                                                      <div class="advantage-num">01.</div>
+                                                      <div class="advantage-title">Постановка задачи по Email</div>
+                                                  </div>
+                                                  <div class="advantage-body">
+                                                      Удобная и привычная модель постановки задач, при которой задачи фиксируются и никогда не теряются.
+                                                  </div>
+                                                  <div class="advantage-icon">
+                                                      <img alt="Почта" src="themes/custom/bootstrap_dc/images/support1.svg" class="img-responsive" loading="lazy">
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="col-sm-6 col-md-3 col-xs-12 advantage-col">
+                                          <div class="advantage">
+                                              <div class="advantage-wrapper">
+                                                  <div class="advantage-header">
+                                                      <div class="advantage-num">02.</div>
+                                                      <div class="advantage-title">Система Helpdesk – отчетность, прозрачность</div>
+                                                  </div>
+                                                  <div class="advantage-body">
+                                                      Возможность посмотреть все заявки в работе и отработанные часы в личном кабинете через браузер. Более 122874 тикетов уже выполнено!
+                                                  </div>
+                                                  <div class="advantage-icon">
+                                                      <img alt="Диаграмма" src="themes/custom/bootstrap_dc/images/support2.svg" class="img-responsive" loading="lazy">
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="col-sm-6 col-md-3 col-xs-12 advantage-col">
+                                          <div class="advantage">
+                                              <div class="advantage-wrapper">
+                                                  <div class="advantage-header">
+                                                      <div class="advantage-num">03.</div>
+                                                      <div class="advantage-title">Расширенная техническая поддержка</div>
+                                                  </div>
+                                                  <div class="advantage-body">
+                                                      Возможность организации расширенной техподдержки с 6:00 до 22:00 без выходных.
+                                                  </div>
+                                                  <div class="advantage-icon">
+                                                      <img alt="Поддержка" src="themes/custom/bootstrap_dc/images/support3.svg" class="img-responsive" loading="lazy">
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="col-sm-6 col-md-3 col-xs-12 advantage-col">
+                                          <div class="advantage">
+                                              <div class="advantage-wrapper">
+                                                  <div class="advantage-header">
+                                                      <div class="advantage-num">04.</div>
+                                                      <div class="advantage-title">Персональный менеджер проекта</div>
+                                                  </div>
+                                                  <div class="advantage-body">
+                                                      Ваш менеджер проекта всегда в курсе текущего состояния проекта и в любой момент готов ответить на любые вопросы.
+                                                  </div>
+                                                  <div class="advantage-icon">
+                                                      <img alt="Пользователь" src="themes/custom/bootstrap_dc/images/support4.svg" class="img-responsive" loading="lazy">
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="col-sm-6 col-md-3 col-xs-12 advantage-col">
+                                          <div class="advantage">
+                                              <div class="advantage-wrapper">
+                                                  <div class="advantage-header">
+                                                      <div class="advantage-num">05.</div>
+                                                      <div class="advantage-title">Удобные способы оплаты</div>
+                                                  </div>
+                                                  <div class="advantage-body">
+                                                      Безналичный расчет по договору или электронные деньги: WebMoney, Яндекс.Деньги, Paypal.
+                                                  </div>
+                                                  <div class="advantage-icon">
+                                                      <img alt="Оплата" src="themes/custom/bootstrap_dc/images/support5.svg" class="img-responsive" loading="lazy">
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="col-sm-6 col-md-3 col-xs-12 advantage-col">
+                                          <div class="advantage">
+                                              <div class="advantage-wrapper">
+                                                  <div class="advantage-header">
+                                                      <div class="advantage-num">06.</div>
+                                                      <div class="advantage-title">Работаем с SLA и NDA</div>
+                                                  </div>
+                                                  <div class="advantage-body">
+                                                      Работа в рамках соглашений о конфиденциальности и об уровне качества работ.
+                                                  </div>
+                                                  <div class="advantage-icon">
+                                                      <img alt="Документ" src="themes/custom/bootstrap_dc/images/support6.svg" class="img-responsive" loading="lazy">
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="col-sm-6 col-md-3 col-xs-12 advantage-col">
+                                          <div class="advantage">
+                                              <div class="advantage-wrapper">
+                                                  <div class="advantage-header">
+                                                      <div class="advantage-num">07.</div>
+                                                      <div class="advantage-title">Штатные специалисты</div>
+                                                  </div>
+                                                  <div class="advantage-body">
+                                                      Надежные штатные специалисты, никаких фрилансеров.
+                                                  </div>
+                                                  <div class="advantage-icon">
+                                                      <img alt="Сотрудники" src="themes/custom/bootstrap_dc/images/support7.svg" class="img-responsive" loading="lazy">
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="col-sm-6 col-md-3 col-xs-12 advantage-col">
+                                          <div class="advantage">
+                                              <div class="advantage-wrapper">
+                                                  <div class="advantage-header">
+                                                      <div class="advantage-num">08.</div>
+                                                      <div class="advantage-title">Удобные каналы связи</div>
+                                                  </div>
+                                                  <div class="advantage-body">
+                                                      Консультации по телефону, скайпу, в месенджерах.
+                                                  </div>
+                                                  <div class="advantage-icon">
+                                                      <img alt="Вопросы" src="themes/custom/bootstrap_dc/images/support8.svg" class="img-responsive" loading="lazy">
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div class="expertise">
+                              <div class="container">
+                                  <div class="row">
+                                      <div class="col-md-6 col-xs-12 col-md-offset-6">
+                                          <div class="row">
+                                              <div class="col-md-12">
+                                                  <h2 class="block-title">Экспертиза в Drupal,<br> опыт 19 лет!</h2>
+                                              </div>
+                                          </div>
+                                          <div class="row row-flex expertise-row">
+                                              <div class="col-sm-6 col-xs-12 expertise-col">
+                                                  <div class="expertise-item">
+                                                      <div class="expertise-item-body">
+                                                          Только системный подход – контроль версий, резервирование и тестирование!
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <div class="col-sm-6 col-xs-12 expertise-col">
+                                                  <div class="expertise-item">
+                                                      <div class="expertise-item-body">
+                                                          Только Drupal сайты, не берем на поддержку сайты на других CMS!
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <div class="col-sm-6 col-xs-12 expertise-col">
+                                                  <div class="expertise-item">
+                                                      <div class="expertise-item-body">
+                                                          Участвуем в разработке ядра Drupal и модулей на Drupal.org, разрабатываем <a href="drupalgive.html">свои модули Drupal</a>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <div class="col-sm-6 col-xs-12 expertise-col">
+                                                  <div class="expertise-item">
+                                                      <div class="expertise-item-body">
+                                                          Поддерживаем сайты на Drupal 5, 6, 7, 8 и 9
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="expertise-img">
+                                  <picture>
+                                      <source srcset="themes/custom/bootstrap_dc/images/laptop.webp 1x" type="image/webp">
+                                      <source srcset="themes/custom/bootstrap_dc/images/laptop.png 1x" type="image/jpeg">
+                                      <img srcset="themes/custom/bootstrap_dc/images/laptop.png 1x" src="themes/custom/bootstrap_dc/images/laptop.png" alt="Helpdesk" typeof="foaf:Image" class="img-responsive" loading="lazy">
+                                  </picture>
+                              </div>
+                          </div>
+                      </div>
+
+                  </section>
+
+                  <section id="block-tariffs" class="block block-block-content block-block-content44e135e8-5c7a-4c25-9a28-466de4b12816 clearfix">
+                      <h2 class="block-title">Тарифы</h2>
+
+                      <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item">
+                          <div class="tariffs">
+                              <div class="container">
+                                  <div class="row row-flex tariffs-row">
+                                      <div class="col-sm-4 col-xs-12 col-flex">
+                                          <div class="tariff">
+                                              <div class="tariff-wrapper">
+                                                  <div class="tariff-header">
+                                                      <div class="tariff-title">СТАНДАРТ</div><br>
+                                                      <div class="tariff-price small">От 6 000 <span class="rub">₽</span></div>
+                                                  </div>
+                                                  <div class="tariff-body">
+                                                      <div class="tarrif-body-item">Обновления сервера</div>
+                                                      <div class="tarrif-body-item">24/7 мониторинг</div>
+                                                      <div class="tarrif-body-item">Резервное копирование данных</div>
+                                                      <div class="tarrif-body-item">Ликвидация аварий – до 2 часов</div>
+                                                      <div class="tarrif-body-item">Реакция на тикет - как можно скорее</div>
+                                                      <div class="tarrif-body-item">Консультации и работы по SEO</div>
+                                                  </div>
+                                                  <div class="tariff-footer">
+                                                      <a href="#block-podderzhkasaytovkontaktnayaforma" class="contact-form tariff-footer-btn">Свяжитесь с нами!</a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="col-sm-4 col-flex col-xs-12">
+                                          <div class="tariff">
+                                              <div class="tariff-wrapper">
+                                                  <div class="tariff-header">
+                                                      <div class="tariff-title">БИЗНЕС</div><br>
+                                                      <div class="tariff-price small">От 30 000 <span class="rub">₽</span></div>
+                                                  </div>
+                                                  <div class="tariff-body ">
+                                                      <div class="tarrif-body-item"><b>Включено 10 часов разработки</b></div>
+                                                      <div class="tarrif-body-item">Обновления сервера</div>
+                                                      <div class="tarrif-body-item">24/7 мониторинг</div>
+                                                      <div class="tarrif-body-item">Резервное копирование данных</div>
+                                                      <div class="tarrif-body-item">Ликвидация аварий – до 2 часов</div>
+                                                      <div class="tarrif-body-item">Дополнительный час работы</div>
+                                                      <div class="tarrif-body-item">Реакция на тикет – до 24 часов</div>
+                                                      <div class="tarrif-body-item">Консультации и работы по SEO</div>
+                                                  </div>
+                                                  <div class="tariff-footer">
+                                                      <a href="#block-podderzhkasaytovkontaktnayaforma" class="contact-form tariff-footer-btn">Свяжитесь с нами!</a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="col-sm-4 col-flex col-xs-12">
+                                          <div class="tariff">
+                                              <div class="tariff-wrapper">
+                                                  <div class="tariff-header">
+                                                      <div class="tariff-title">ENTERPRISE</div><br>
+                                                      <div class="tariff-price small">От 300 000<span class="rub enterprise">₽</span></div>
+                                                  </div>
+                                                  <div class="tariff-body">
+                                                      <div class="tarrif-body-item"><b>Включено 100 часов разработки</b></div>
+                                                      <div class="tarrif-body-item">Обновления сервера</div>
+                                                      <div class="tarrif-body-item">24/7 мониторинг</div>
+                                                      <div class="tarrif-body-item">Резервное копирование данных</div>
+                                                      <div class="tarrif-body-item">Ликвидация аварий – до 2 часов</div>
+                                                      <div class="tarrif-body-item">Дополнительный час работы</div>
+                                                      <div class="tarrif-body-item">Реакция на тикет – 1 час</div>
+                                                      <div class="tarrif-body-item">Консультации и работы по SEO</div>
+                                                  </div>
+                                                  <div class="tariff-footer">
+                                                      <a href="#block-podderzhkasaytovkontaktnayaforma" class="contact-form tariff-footer-btn">Свяжитесь с нами!</a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="row">
+                                      <div class="col-xs-12">
+                                          <div class="tariffs-ps">
+                                              Вам не подходят наши тарифы? Оставьте заявку и мы предложим вам индивидуальные условия!
+                                              <a href="#block-podderzhkasaytovkontaktnayaforma" class="contact-form tariffs-link">Получить индивидуальный тариф</a>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                  </section>
+
+
+                  <section id="block-zadachaivremya" class="block block-block-content block-block-content3454cc59-4e45-4d93-9788-fffca5875f82 clearfix">
+
+                      <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item">
+                          <div class="competencies without-padding-bottom">
+                              <div class="container">
+                                  <div class="row">
+                                      <div class="col-md-12">
+                                          <h2 class="block-title">Наши профессиональные разработчики выполняют быстро любые задачи</h2>
+                                          <div class="competencies-description">
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="row row-flex competencies-row">
+                                      <div class="col-sm-4 col-xs-12">
+                                          <div class="competency">
+                                              <div class="competency-wrapper">
+                                                  <div class="competency-header">
+                                                      <div class="competency-icon"><img src="themes/custom/bootstrap_dc/images/competency-20.svg" class="img-responsive" loading="lazy"></div>
+                                                  </div>
+                                                  <div class="competency-body">
+                                                      <div class="competency-time">от 1ч</div>
+                                                      Настройка события GA <br> в интернет-магазине
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="col-sm-4 col-xs-12">
+                                          <div class="competency">
+                                              <div class="competency-wrapper">
+                                                  <div class="competency-header">
+                                                      <div class="competency-icon"><img src="themes/custom/bootstrap_dc/images/competency-21.svg" class="img-responsive" loading="lazy"></div>
+                                                  </div>
+                                                  <div class="competency-body">
+                                                      <div class="competency-time">от 20ч</div>
+                                                      Разработка мобильной <br> версии сайта
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="col-sm-4 col-xs-12">
+                                          <div class="competency">
+                                              <div class="competency-wrapper">
+                                                  <div class="competency-header">
+                                                      <div class="competency-icon"><img src="themes/custom/bootstrap_dc/images/competency-22.svg" class="img-responsive" loading="lazy"></div>
+                                                  </div>
+                                                  <div class="competency-body">
+                                                      <div class="competency-time">от 8ч</div>
+                                                      Интеграция <br> модуля оплаты
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                  </section>
+
+
+                  <section class="views-element-container container team-grid block block-views block-views-blockteam-block-2 clearfix" id="block-views-block-team-block-2">
+                      <h2 class="block-title">Команда</h2>
+                      <div class="form-group">
+                          <div class="view view-team view-id-team view-display-id-block_2 js-view-dom-id-0cafb796aa48b807cf6f5d1ae2fce73a9ee3597b4a83e95d558efae95b7571d5">
+
+                              <div class="view-header"></div>
+
+                              <div class="view-content">
+                                  <div class="col-xs-6 col-sm-6 col-md-4 views-row">
+                                      <article typeof="schema:Person" about="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" class="user-teaser">
+                                          <div class="user-teaser-photo field field--name-user-picture field--type-image field--label-hidden field--item">
+                                              <picture>
+                                                  <source srcset="photo/IMG_2472_0.jpg 1x?itok=Fyg_7Erv 1x" type="image/jpeg" width="280" height="280">
+                                                  <img loading="eager" srcset="photo/IMG_2472_0.jpg 1x?itok=Fyg_7Erv 1x" width="280" height="280" src="photo/IMG_2472_0.jpg?itok=Fyg_7Erv" alt="Profile picture for user Сергей Синица" typeof="foaf:Image" loading="lazy">
+                                              </picture>
+                                          </div>
+                                          <div class="user-teaser-name">
+                                              Сергей Синица
+                                          </div>
+                                          <div class="user-teaser-post field field--name-field-post field--type-string field--label-hidden field--item">Руководитель отдела веб-разработки, канд. техн. наук, заместитель директора</div>
+                                      </article>
+                                  </div>
+
+                                  <div class="col-xs-6 col-sm-6 col-md-4 views-row">
+                                      <article typeof="schema:Person" about="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" class="user-teaser">
+                                          <div class="user-teaser-photo field field--name-user-picture field--type-image field--label-hidden field--item">
+                                              <picture>
+                                                  <source srcset="photo/IMG_2474_1.jpg 1x?itok=wEUr4Wxc 1x" type="image/jpeg" width="280" height="280">
+                                                  <img loading="eager" srcset="photo/IMG_2474_1.jpg 1x?itok=wEUr4Wxc 1x" width="280" height="280" src="photo/IMG_2474_1.jpg?itok=wEUr4Wxc" alt="Profile picture for user Алексей Синица" typeof="foaf:Image" loading="lazy">
+                                              </picture>
+                                          </div>
+                                          <div class="user-teaser-name">
+                                              Алексей Синица
+                                          </div>
+                                          <div class="user-teaser-post field field--name-field-post field--type-string field--label-hidden field--item">Руководитель отдела поддержки сайтов</div>
+                                      </article>
+                                  </div>
+
+                                  <div class="col-xs-6 col-sm-6 col-md-4 views-row">
+                                      <article typeof="schema:Person" about="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" class="user-teaser">
+                                          <div class="user-teaser-photo field field--name-user-picture field--type-image field--label-hidden field--item">
+                                              <picture>
+                                                  <source srcset="photo/01.jpg 1x?itok=PW-mkaNm 1x" type="image/jpeg" width="280" height="280">
+                                                  <img loading="eager" srcset="photo/01.jpg 1x?itok=PW-mkaNm 1x" width="280" height="280" src="photo/01.jpg?itok=PW-mkaNm" alt="Profile picture for user b.romanenko" typeof="foaf:Image" loading="lazy">
+                                              </picture>
+                                          </div>
+                                          <div class="user-teaser-name">
+                                              Богдан Романенко
+                                          </div>
+                                          <div class="user-teaser-post field field--name-field-post field--type-string field--label-hidden field--item">Web-разработчик</div>
+                                      </article>
+                                  </div>
+
+                                  <div class="col-xs-6 col-sm-6 col-md-4 views-row">
+                                      <article typeof="schema:Person" about="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" class="user-teaser">
+                                          <div class="user-teaser-photo field field--name-user-picture field--type-image field--label-hidden field--item">
+                                              <picture>
+                                                  <source srcset="photo/IMG_2522_0.jpg 1x?itok=nZgXrHj_ 1x" type="image/jpeg" width="280" height="280">
+                                                  <img loading="eager" srcset="photo/IMG_2522_0.jpg 1x?itok=nZgXrHj_ 1x" width="280" height="280" src="photo/IMG_2522_0.jpg?itok=nZgXrHj_" alt="Profile picture for user Геворг Мкртчян" typeof="foaf:Image" loading="lazy">
+                                              </picture>
+                                          </div>
+                                          <div class="user-teaser-name">
+                                              Дарья Бочкарёва
+                                          </div>
+                                          <div class="user-teaser-post field field--name-field-post field--type-string field--label-hidden field--item">Руководитель отдела продвижения, контекстной рекламы и контент-поддержки сайтов</div>
+                                      </article>
+                                  </div>
+
+                                  <div class="col-xs-6 col-sm-6 col-md-4 views-row">
+                                      <article typeof="schema:Person" about="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" class="user-teaser">
+                                          <div class="user-teaser-photo field field--name-user-picture field--type-image field--label-hidden field--item">
+                                              <picture>
+                                                  <source srcset="photo/IMG_9971_16.jpg 1x?itok=rH-9-ZmI 1x" type="image/jpeg" width="280" height="280">
+                                                  <img loading="eager" srcset="photo/IMG_9971_16.jpg 1x?itok=rH-9-ZmI 1x" width="280" height="280" src="photo/IMG_9971_16.jpg?itok=rH-9-ZmI" alt="Profile picture for user Ирина" typeof="foaf:Image" loading="lazy">
+                                              </picture>
+                                          </div>
+                                          <div class="user-teaser-name">
+                                              Ирина Торкунова
+                                          </div>
+                                          <div class="user-teaser-post field field--name-field-post field--type-string field--label-hidden field--item">Менеджер по работе с клиентами</div>
+                                      </article>
+                                  </div>
+
+                              </div>
+
+                              <div class="more-link form-group"><a href="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4">Вся команда</a></div>
+
+                          </div>
+                      </div>
+                  </section>
+
+
+                  <section class="views-element-container container block block-views block-views-blockkeys-block-1 clearfix" id="block-views-block-keys-block">
+                      <h2 class="block-title">Последние кейсы</h2>
+                      <div class="form-group">
+                          <div class="view view-keys view-id-keys view-display-id-block_1 js-view-dom-id-4967954e3a0366045071d935b9e859cc02203d5f3a35018d514bff64fadcac1f">
+                              <div class="view-content">
+
+                                  <article data-history-node-id="323" about="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" class="blog is-promoted keys-1 clearfix">
+
+                                      <div class="keys-1__wrapper">
+                                          <div class="keys-1__picture">
+
+                                              <div class="field field--name-field-blog-img field--type-image field--label-hidden field--item">
+                                                  <picture>                                                     
+                                                      <source srcset="photo/Mar-Business_18.jpg 1x?itok=XOWp6vaU 1x" type="image/jpeg" width="840" height="475">
+                                                      <img loading="eager" srcset="photo/Mar-Business_18.jpg 1x?itok=XOWp6vaU 1x" width="840" height="475" src="photo/Mar-Business_18.jpg?itok=XOWp6vaU" alt="SendPulse на Drupal" typeof="foaf:Image" loading="lazy">
+                                                  </picture>
+                                              </div>
+                                          </div>
+
+                                          <div class="keys-1__container">
+                                              <div class="keys-1__header">
+                                                  <h2>
+                                                      <a href="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" rel="bookmark">
+                                                          <span>Интеграция Sendpulse с сайтом на Drupal</span>
+                                                      </a>
+                                                  </h2>
+                                                  <div class="keys-1__header-date">
+                                                      15.03.2022
+                                                  </div>
+                                              </div>
+                                              <div class="keys-1__content">
+                                                  <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><p>E-mail-рассылки помогают вернуть клиента на сайт, подтолкнуть его к повторной...</p></div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </article>
+
+                                  <article data-history-node-id="322" about="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" class="blog is-promoted keys-2 clearfix">
+                                      <div class="keys-2__wrapper">
+                                          <div class="keys-2__picture">
+                                              <div class="field field--name-field-blog-img field--type-image field--label-hidden field--item">
+                                                  <picture>
+                                                      <source srcset="photo/55896.jpg 700w?itok=xcAMd3TB 700w" type="image/jpeg" sizes="max-width:767px" width="700" height="360">
+                                                      <img loading="eager" srcset="photo/55896.jpg 700w?itok=xcAMd3TB 700w" sizes="max-width:767px" width="700" height="360" src="photo/55896.jpg?itok=JLRbn6yD" alt="SEO на Drupal" typeof="foaf:Image" loading="lazy">
+                                                  </picture>
+                                              </div>
+                                          </div>
+                                          <div class="keys-2__container">
+                                              <div class="keys-2__header">
+                                                  <h2>
+                                                      <a href="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" rel="bookmark">
+                                                          <span>SEO-продвижение интернет-магазинов на Drupal: создали модуль, который превращает свойства товаров в осмысленные заголовки</span>
+                                                      </a>
+                                                  </h2>
+                                              </div>
+                                              <div class="keys-2__content">
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </article>
+
+                                  <article data-history-node-id="321" about="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" class="blog is-promoted keys-1 clearfix">
+                                      <div class="keys-1__wrapper">
+                                          <div class="keys-1__picture">
+                                              <div class="field field--name-field-blog-img field--type-image field--label-hidden field--item">
+                                                  <picture>
+                                                      <source srcset="photo/business-online-shopping-and-sale-concept.jpg 1x?itok=3Ph7yPRH 1x" type="image/jpeg" width="840" height="475">
+                                                      <img loading="eager" srcset="photo/business-online-shopping-and-sale-concept.jpg 1x?itok=3Ph7yPRH 1x" width="840" height="475" src="photo/business-online-shopping-and-sale-concept.jpg?itok=3Ph7yPRH" alt="Подключение оплаты к сайту на Drupal" typeof="foaf:Image" loading="lazy">
+                                                  </picture>
+                                              </div>
+                                          </div>
+                                          <div class="keys-1__container">
+                                              <div class="keys-1__header">
+                                                  <h2>
+                                                      <a href="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" rel="bookmark">
+                                                          <span>Интеграция платёжной системы с сайтом на Drupal</span>
+                                                      </a>
+                                                  </h2>
+                                                  <div class="keys-1__header-date">
+                                                      13.03.2022
+                                                  </div>
+                                              </div>
+                                              <div class="keys-1__content">
+                                                  <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><p>Чтобы получать от клиентов оплату за товары и услуги, нужно подключить на сайт...</p></div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </article>
+
+                                  <article data-history-node-id="320" about="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" class="blog is-promoted keys-1 clearfix">
+                                      <div class="keys-1__wrapper">
+                                          <div class="keys-1__picture">
+                                              <div class="field field--name-field-blog-img field--type-image field--label-hidden field--item">
+                                                  <picture>
+                                                      <source srcset="photo/analytics-plan-strategy-insight-concept.jpg 1x?itok=IUg62biP 1x" type="image/jpeg" width="840" height="475">
+                                                      <img loading="eager" srcset="photo/analytics-plan-strategy-insight-concept.jpg 1x?itok=IUg62biP 1x" width="840" height="475" src="photo/analytics-plan-strategy-insight-concept.jpg?itok=IUg62biP" alt="Поддержка сайтов на Drupal" typeof="foaf:Image" loading="lazy">
+                                                  </picture>
+                                              </div>
+                                          </div>
+                                          <div class="keys-1__container">
+                                              <div class="keys-1__header">
+                                                  <h2>
+                                                      <a href="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" rel="bookmark">
+                                                          <span>Повышения трафика — не предел: как мы улучшали сайт клиента после успешной SEO-оптимизации</span>
+                                                      </a>
+                                                  </h2>
+                                                  <div class="keys-1__header-date">
+                                                      12.03.2022
+                                                  </div>
+                                              </div>
+                                              <div class="keys-1__content">
+
+                                                  <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><p>После успешной SEO-оптимизации <a href="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4">мы</a> начали...</p></div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </article>
+
+                                  <article data-history-node-id="319" about="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" class="blog is-promoted keys-1 clearfix">
+                                      <div class="keys-1__wrapper">
+                                          <div class="keys-1__picture">
+                                              <div class="field field--name-field-blog-img field--type-image field--label-hidden field--item">
+                                                  <picture>
+                                                      <source srcset="photo/20943678.jpg 1x?itok=Zf0fS_xz 1x" type="image/jpeg" width="840" height="475">
+                                                      <img loading="eager" srcset="photo/20943678.jpg 1x?itok=Zf0fS_xz 1x" width="840" height="475" src="photo/20943678.jpg?itok=Zf0fS_xz" alt="Перенос сайта на Drupal" typeof="foaf:Image" loading="lazy">
+                                                  </picture>
+                                              </div>
+                                          </div>
+                                          <div class="keys-1__container">
+                                              <div class="keys-1__header">
+                                                  <h2>
+                                                      <a href="blog/pereezd-s-samopisnogo-sayta-na-drupal-migraciya-desyatkov-tysyach-polzovateley-i-tonn-kontenta.html" rel="bookmark">
+                                                          <span>«Cоциальная сеть» травматологов, ортопедов и хирургов calcaneus.ru: переезд с самописного сайта на Drupal. Миграция десятков тысяч пользователей и тонн контента</span>
+                                                      </a>
+                                                  </h2>
+                                                  <div class="keys-1__header-date">
+                                                      11.03.2022
+                                                  </div>
+                                              </div>
+                                              <div class="keys-1__content">
+                                                  <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><p>В этой статье <a href="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4">мы</a> расскажем о том, как...</p></div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </article>
+
+                                  <article data-history-node-id="318" about="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" class="blog is-promoted keys-2 clearfix">
+                                      <div class="keys-2__wrapper">
+                                          <div class="keys-2__picture">
+                                              <div class="field field--name-field-blog-img field--type-image field--label-hidden field--item">
+                                                  <picture>
+                                                      <source srcset="photo/2809413.jpg 700w?itok=POGNHRPC 700w" type="image/jpeg" sizes="max-width:767px" width="700" height="360">
+                                                      <img loading="eager" srcset="photo/2809413.jpg 700w?itok=POGNHRPC 700w" sizes="max-width:767px" width="700" height="360" src="photo/2809413.jpg?itok=9MYqAGVO" alt="Google AMP на Drupal" typeof="foaf:Image" loading="lazy">
+                                                  </picture>
+                                              </div>
+                                          </div>
+                                          <div class="keys-2__container">
+                                              <div class="keys-2__header">
+                                                  <h2>
+                                                      <a href="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" rel="bookmark">
+                                                          <span>Технология Google AMP для сайтов на Drupal: быстрая загрузка страниц сайта с мобильного телефона</span>
+                                                      </a>
+                                                  </h2>
+                                              </div>
+                                              <div class="keys-2__content">
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </article>
+
+                                  <article data-history-node-id="316" about="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" class="blog is-promoted keys-1 clearfix">
+                                      <div class="keys-1__wrapper">
+                                          <div class="keys-1__picture">
+                                              <div class="field field--name-field-blog-img field--type-image field--label-hidden field--item">
+                                                  <picture>
+                                                      <source srcset="photo/404.jpg 1x?itok=SRdI_G0f 1x" type="image/jpeg" width="840" height="475">
+                                                      <img loading="eager" srcset="photo/404.jpg 1x?itok=SRdI_G0f 1x" width="840" height="475" src="photo/404.jpg?itok=SRdI_G0f" alt="picture 404" typeof="foaf:Image" loading="lazy">
+                                                  </picture>
+                                              </div>
+                                          </div>
+                                          <div class="keys-1__container">
+                                              <div class="keys-1__header">
+                                                  <h2>
+                                                      <a href="rick-astley-never-gonna-give-you-up-362329-trim_kQYTo9x7.mp4" rel="bookmark">
+                                                          <span>Найти ошибки на сайте автоматически? Легко!</span>
+                                                      </a>
+                                                  </h2>
+                                                  <div class="keys-1__header-date">
+                                                      03.03.2022
+                                                  </div>
+                                              </div>
+                                              <div class="keys-1__content">
+                                                  <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><p>После внесения правок на сайт, разработчик должен убедиться, что всё работает как...</p></div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </article>
+
+                              </div>
+                          </div>
+                      </div>
+                  </section>
+
+
+                  <section class="views-element-container block block-views block-views-blocktestimonials-block-1 clearfix" id="block-views-block-testimonials-block-1">
+                      <h2 class="block-title">Отзывы</h2>
+                      <div class="form-group">
+                          <div class="container view view-testimonials view-id-testimonials view-display-id-block_1 js-view-dom-id-3bc90d819c19f344514820a50d9473d3c3e40ef4719344fdecb86d26e6d7ff38">
+                              <div class="view-content">
+                                  <div class="slick blazy slick--view slick--view--testimonials slick--view--testimonials--block-1 slick--view--testimonials-block-block-1 is-b-captioned slick--optionset--reviews" data-blazy="">
+                                      <div id="slick-5e06ab31973" data-slick="{&quot;count&quot;:8,&quot;total&quot;:8,&quot;adaptiveHeight&quot;:true,&quot;centerMode&quot;:false,&quot;fade&quot;:true,&quot;lazyLoad&quot;:&quot;blazy&quot;}" class="slick__slider">
+
+                                          <div class="slick__slide slide slide--0">
+                                              <div class="views-field views-field-field-project-logo">
+                                                  <div class="field-content">
+                                                      <img loading="lazy" src="photo/logo_0.png?itok=-x9nIg3n" width="78" height="46" alt="Ciel parfum" typeof="foaf:Image" loading="lazy">
+                                                  </div>
+                                              </div><div class="views-field views-field-field-report-text"><div class="field-content">Долгие поиски единственного и неповторимого мастера на многострадальный сайт www.cielparfum.com, который был собран крайне некомпетентным программистом и раз в месяц стабильно грозил погибнуть, привели меня на сайт и, в итоге, к ребятам из Drupal-coder. И вот уже практически полгода как не проходит и дня, чтобы я не поудивлялась и не порадовалась своему везению! Починили все, что не работало - от поиска до отображения меню. Провели редизайн - не отходя от желаемого, но со своими существенными и качественными дополнениями. Осуществили ряд проектов - конкурсы, тесты и тд. А уж мелких починок и доработок - не счесть! И главное - все качественно и быстро (не взирая на не самый "быстрый" тариф). Есть вопросы - замечательный Алексей всегда подскажет, поддержит, отремонтирует и/или просто сделает с нуля. Есть задумка для реализации - замечательный Сергей обсудит и предложит идеальный вариант. Есть проблема - замечательные Надежда и Роман починят, поправят, сделают! Ребята доказали, что эта CMS - мощная и грамотная система управления. Надеюсь, что наше сотрудничество затянется надолго! Спасибо!!!</div></div><div class="views-field views-field-field-report-author"><div class="field-content">С уважением, Наталья Сушкова руководитель Отдела веб-проектов Группы компаний «Си Эль парфюм»&nbsp;<a href="http://www.cielparfum.com/">http://www.cielparfum.com/</a></div></div>
+                                          </div>
+
+                                          <div class="slick__slide slide slide--1">
+                                              <div class="views-field views-field-field-project-logo">
+                                                  <div class="field-content">
+                                                      <img loading="lazy" src="photo/logo.png?itok=3KRH_abb" width="113" height="46" alt="personal-writer.com" typeof="foaf:Image" loading="lazy">
+                                                  </div>
+                                              </div><div class="views-field views-field-field-report-text"><div class="field-content">Сергей — профессиональный, высококвалифицированый программист с огромным опытом в ИТ. Я долгое время общался с топ-фрилансерами (вся первая двадцатка) на веблансере и могу сказать, что С СЕРГЕЕМ ОНИ И РЯДОМ НЕ ВАЛЯЛИСЬ. Работаем с Сергеем до сих пор. С ним приятно работать, я доволен. </div></div><div class="views-field views-field-field-report-author"><div class="field-content">Сергей Чепурко, руководитель проекта&nbsp;<a href="http://www.personal-writer.com/">www.personal-writer.com</a>&nbsp;/&nbsp;<a href="http://www.writers-united.org/">www.writers-united.org</a></div></div>
+                                          </div>
+
+                                          <div class="slick__slide slide slide--2">
+                                              <div class="views-field views-field-field-project-logo">
+                                                  <div class="field-content">
+                                                      <img loading="lazy" src="photo/farbors_ru.jpg?itok=pYl_W06s" width="192" height="46" alt="farbors.ru" typeof="foaf:Image" loading="lazy">
+                                                  </div>
+                                              </div><div class="views-field views-field-field-report-text"><div class="field-content">Выражаю глубочайшую благодарность команде специалистов компании "Инитлаб" и лично Дмитрию Купянскому и Алексею Синице. Сайт был первоклассно перевёрстан из старой табличной модели в новую на базе Drupal с дополнительной функциональностью. Всё было сделано с высочайшим качеством и точно в сроки. Всем кому хочется без нервов и лишних вопросов разработать сайт рекомендую обращаться именно к этой команде профессионалов.</div></div><div class="views-field views-field-field-report-author"><div class="field-content">Леонид Александрович Ледовский</div></div>
+                                          </div>
+
+                                          <div class="slick__slide slide slide--3">
+                                              <div class="views-field views-field-field-project-logo">
+                                                  <div class="field-content">
+                                                      <img loading="lazy" src="photo/nashagazeta_ch.png?itok=D1pIj2aW" width="157" height="46" alt="nashagazeta.ch" typeof="foaf:Image" loading="lazy">
+                                                  </div>
+                                              </div><div class="views-field views-field-field-report-text">
+                                                  <div class="field-content">
+                                                      Моя электронная газета www.nashagazeta.ch существует в Швейцарии уже 10 лет. За это время мы сменили 7 специалистов по техподдержке, и только сейчас, в последние несколько месяцев, с начала сотрудничества с Алексеем Синицей и его командой, я впервые почувствовала, что у меня есть надежный технический тыл. Без громких слов и обещаний, ребята просто спокойно и качественно делают работу, быстро реагируют, находят решения, предлагают конкретные варианты улучшения функционирования сайта и сами их оперативно осуществляют. Сотрудничество с ними – одно удовольствие!
+                                                  </div>
+                                              </div><div class="views-field views-field-field-report-author"><div class="field-content">Надежда Сикорская, Женева, Швейцария</div></div>
+                                          </div>
+
+                                          <div class="slick__slide slide slide--4">
+                                              <div class="views-field views-field-field-project-logo">
+                                                  <div class="field-content">
+                                                      <img loading="lazy" src="photo/logo-estee.svg_.png?itok=JRTl4v_y" width="99" height="46" alt="estee-design.ru" typeof="foaf:Image" loading="lazy">
+                                                  </div>
+                                              </div><div class="views-field views-field-field-report-text">
+                                                  <div class="field-content">
+                                                      Наша компания Estee Design занимается дизайном интерьеров. Сайт сверстан на Drupal. Искали программистов под выполнение ряда небольших изменений и корректировок по сайту.
+                                                      Пообщавшись с Алексеем Синицей, приняли решение о начале работ с компанией Initlab/drupal-coder. Сотрудничеством довольны на 100%. Четкая и понятная система коммуникации, достаточно оперативное решение по задачам. Дали рекомендации по улучшению програмной части сайта, исправили ряд скрытых ошибок.
+                                                      Никогда не пишу отзывы (нет времени), но в данном случае, по просьбе Алексея, не могу не рекомендовать Initlab другим людям - действительно компания профессионалов.
+                                                  </div>
+                                              </div><div class="views-field views-field-field-report-author"><div class="field-content">Кузин Вадим, руководитель строительного направления Дизайн-бюро интерьеров Estee <a href="http://estee-design.ru">estee-design.ru</a></div></div>
+                                          </div>
+
+                                          <div class="slick__slide slide slide--5">
+                                              <div class="views-field views-field-field-project-logo">
+                                                  <div class="field-content">
+                                                      <img loading="lazy" src="photo/cableman_ru.png?itok=x_k_P87d" width="200" height="41" alt="cableman.ru" typeof="foaf:Image" loading="lazy">
+                                                  </div>
+                                              </div><div class="views-field views-field-field-report-text">
+                                                  <div class="field-content">
+                                                      Наша компания за несколько лет сменила несколько команд программистов и специалистов техподдержки, и почти отчаялась найти на российском рынке адекватное профессиональное предложение по разумной цене. Пока мы не начали работать с командой "Инитлаб", воплощающей в себе все наши представления о нормальной системе взаимодействия в сочетании с профессиональным неравнодушием. Впервые в моей деловой практике я чувствую надежно прикрытыми важнейшие задачи в жизни электронного СМИ, при том, что мои коллеги работают за сотни километров от нас и мы никогда не встречались лично.
+                                                  </div>
+                                              </div><div class="views-field views-field-field-report-author"><div class="field-content">Константин Бельский, зам. генерального директора портала <a href="http://www.cableman.ru/">Кабельщик.ру</a></div></div>
+                                          </div>
+
+                                          <div class="slick__slide slide slide--6">
+                                              <div class="views-field views-field-field-project-logo">
+                                                  <div class="field-content">
+                                                      <img loading="lazy" src="photo/logo_2.png?itok=-qAXAinZ" width="165" height="46" alt="www.serebro.ag" typeof="foaf:Image" loading="lazy">
+                                                  </div>
+                                              </div><div class="views-field views-field-field-report-text">
+                                                  <div class="field-content">
+                                                      За довольно продолжительный срок (2014 - 2016 годы) весьма плотной работы (интернет-магазин на безумно замороченном Drupal 6: устраняли косяки разработчиков, ускоряли сайт, сделали множество новых функций и т.п.) - только самые добрые эмоции от работы с командой Initlab / Drupal-coder: всегда можно рассчитывать на быструю и толковую помощь, поддержку, совет. Даже сейчас, не смотря на то, что мы почти год не работали на постоянной основе (банально закончились задачи), случайно возникшая проблема с сайтом была решена мгновенно! В общем, только самые искренние благодарности и рекомендации!
+                                                      Спасибо! )
+                                                  </div>
+                                              </div><div class="views-field views-field-field-report-author"><div class="field-content">С уважением, Владислав, <a href="http://serebro.ag">Serebro.Ag</a></div></div>
+                                          </div>
+
+                                          <div class="slick__slide slide slide--7">
+                                              <div class="views-field views-field-field-project-logo">
+                                                  <div class="field-content">
+                                                      <img loading="lazy" src="photo/lpcma_rus_v4.jpg?itok=XnXzus64" width="110" height="46" alt="lpcma.tsu.ru" typeof="foaf:Image" loading="lazy">
+                                                  </div>
+                                              </div><div class="views-field views-field-field-report-text">
+                                                  <div class="field-content">
+                                                      Хотел поблагодарить за работу над нашими сайтами.
+                                                      За 4 месяца работы привели сайт в порядок, а самое главное получили инструмент, с помощью мы теперь можем быстро и красиво выставлять контент для образования и работы с предприятиями
+                                                      http://lpcma.tsu.ru/ru/post/reference_material
+                                                      Ну и многому научись благодаря работе с вами. Мы очень рады, что удалось найти настолько компетентных ребят )
+                                                  </div>
+                                              </div><div class="views-field views-field-field-report-author"><div class="field-content">Дмитрий Новиков, <a href="http://lpcma.tsu.ru">lpcma.tsu.ru</a></div></div>
+                                          </div>
+                                      </div>
+
+                                      <nav role="navigation" class="slick__arrow">
+                                          <div class="slick__arrow-wrapper">
+                                              <button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0">Previous</button>
+                                              <span class="slick-slide-num"></span>
+                                              <button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0">Next</button>
+                                          </div>
+                                      </nav>
+
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </section>
+
+
+                  <section id="block-faq" class="dc-section faq-block block block-block-content block-block-contentb9e0b1b8-f0ab-4ad3-8793-684b8758f048 clearfix">
+                      <h2 class="block-title">FAQ</h2>
+                      <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item">
+                          <div itemscope="" itemtype="https://schema.org/FAQPage">
+                              <div class="container">
+                                  <div aria-multiselectable="true" class="panel-group panel-faq" id="accordion" role="tablist">
+
+                                      <div class="panel panel-default panel_open" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                                          <div class="panel-heading" id="heading2" role="tab">
+                                              <h4 class="panel-title" itemprop="name"><a class="panel-btn" aria-controls="collapse2" aria-expanded="true" data-parent="#accordion" data-toggle="collapse" href="#collapse2" role="button">Кто непосредственно занимается поддержкой? </a></h4>
+                                          </div>
+                                          <div aria-labelledby="heading2" class="panel-collapse collapse in" id="collapse2" role="tabpanel" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                              <div class="panel-body" itemprop="text">
+                                                  Сайты поддерживают штатные сотрудники ООО «Инитлаб», г. Краснодар, прошедшие специальное
+                                                  обучение и имеющие опыт работы с Друпал от 4 до 15 лет: 8 web-разработчиков, 2 специалиста по
+                                                  SEO, 4 системных администратора.
+                                              </div>
+                                          </div>
+                                      </div>
+
+                                      <div class="panel panel-default panel_close" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                                          <div class="panel-heading" id="heading3" role="tab">
+                                              <h4 class="panel-title" itemprop="name"><a class="panel-btn" aria-controls="collapse3" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapse3" role="button">Как организована работа поддержки? </a></h4>
+                                          </div>
+                                          <div aria-labelledby="heading3" class="panel-collapse collapse" id="collapse3" role="tabpanel" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                              <div class="panel-body" itemprop="text">
+                                                  Клиент выбирает один из тарифов и делает предоплату. Все заявки на работы по сайту
+                                                  заводятся в нашу систему Service desk. В течение времени реакции по тарифу закрепленный за проектом специалист
+                                                  приступает к выполнению заявки, фиксирует время, потраченное на выполнение заявки и закрывает заявку по
+                                                  окончанию работы. Клиент может посмотреть все заявки в работе и отработанные часы
+                                                  в своем кабинете через веб-интерфейс.
+                                              </div>
+                                          </div>
+                                      </div>
+
+                                      <div class="panel panel-default panel_close" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                                          <div class="panel-heading" id="heading4" role="tab">
+                                              <h4 class="panel-title" itemprop="name"><a class="panel-btn" aria-controls="collapse4" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapse4" role="button">Что происходит, когда отработаны все предоплаченные часы за месяц? </a></h4>
+                                          </div>
+                                          <div aria-labelledby="heading4" class="panel-collapse collapse" id="collapse4" role="tabpanel" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                              <div class="panel-body" itemprop="text">
+                                                  Мы уведомляем Клиента, о том, что последующие заявки в этом месяце будут выполняться с
+                                                  доплатой согласно тарифу либо будут перенесены по срокам на следующий месяц. В конце месяца, в котором были заявки с доплатой, клиентам отправляется счет на доплату по факту выполненных работ сверх предоплаты тарифного плана.
+                                              </div>
+                                          </div>
+                                      </div>
+
+                                      <div class="panel panel-default panel_close" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                                          <div class="panel-heading" id="heading5" role="tab">
+                                              <h4 class="panel-title" itemprop="name"><a class="panel-btn" aria-controls="collapse5" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapse5" role="button">Что происходит, когда не отработаны все предоплаченные часы за месяц? </a></h4>
+                                          </div>
+                                          <div aria-labelledby="heading5" class="panel-collapse collapse" id="collapse5" role="tabpanel" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                              <div class="panel-body" itemprop="text">
+                                                  Предоплата не переносится на следующий месяц и деньги не возвращаются. Для продолжения
+                                                  поддержки сайта необходимо оплатить предоплату согласно выбранному тарифу за следующий месяц.
+                                              </div>
+                                          </div>
+                                      </div>
+
+                                      <div class="panel panel-default panel_close" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                                          <div class="panel-heading" id="heading6" role="tab">
+                                              <h4 class="panel-title" itemprop="name">
+                                                  <a class="panel-btn" aria-controls="collapse6" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapse6" role="button">
+                                                      Как происходит оценка и согласование планируемого времени на выполнение
+                                                      заявок?
+                                                  </a>
+                                              </h4>
+                                          </div>
+                                          <div aria-labelledby="heading6" class="panel-collapse collapse" id="collapse6" role="tabpanel" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                              <div class="panel-body" itemprop="text">
+                                                  Заявки, выполнение которых укладывается в оставшееся предоплаченное время, по умолчанию
+                                                  не оцениваются и время не согласовывается, мы стараемся сэкономить время и быстро выполнить работу. Если видим,
+                                                  что задача не укладывается в предоплаченное время, то делаем примерную оценку по времени и согласовываем оценку
+                                                  трудоемкости с Клиентом. Клиент может явно попросить предварительно оценить работу по времени и согласовать
+                                                  трудоемкость, направив заявку с припиской в теме письма «Оценить работу». В этом случае время на оценку также
+                                                  оплачивается согласно тарифу поддержки. Если время фактического выполнения превышает заранее согласованное, то
+                                                  уточняем оценку, договариваемся о возможной доплате и переносе сроков по задаче. На наше усмотрение большие
+                                                  задачи, трудоемкость которых мы можем заранее оценить, например, разработка отдельных модулей или
+                                                  самостоятельных разделов сайта по подробному техническому заданию, могут быть вынесены из поддержки в отдельный
+                                                  проект на договорных условиях.
+                                              </div>
+                                          </div>
+                                      </div>
+
+                                      <div class="panel panel-default panel_close" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                                          <div class="panel-heading" id="heading7" role="tab">
+                                              <h4 class="panel-title" itemprop="name"><a class="panel-btn" aria-controls="collapse7" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapse7" role="button">Сколько программистов выделяется на проект? </a></h4>
+                                          </div>
+                                          <div aria-labelledby="heading7" class="panel-collapse collapse" id="collapse7" role="tabpanel" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                              <div class="panel-body" itemprop="text">
+                                                  1-2 человека. За каждым проектом закрепляется один ответственный специалист, через
+                                                  которого проходят все заявки. Все заявки становятся в очередь к ответственному в порядке их поступления в
+                                                  Helpdesk. Возможно привлечение дополнительных штатных специалистов в поддержку проекта в случаях, когда:
+                                                  <ul>
+                                                      <li>объем заявок стабильно большой и ответственный не успевает выполнять задачи;</li>
+                                                      <li>ответственный не может начать работу по заявке в срок (заболел, ушел в отпуск);</li>
+                                                      <li>специфика задачи такова, что кто-то в команде сделает эту работу существенно быстрее.</li>
+                                                  </ul>
+                                              </div>
+                                          </div>
+                                      </div>
+
+                                      <div class="panel panel-default panel_close" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                                          <div class="panel-heading" id="heading8" role="tab">
+                                              <h4 class="panel-title" itemprop="name"><a class="panel-btn" aria-controls="collapse8" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapse8" role="button">Как подать заявку на внесение изменений на сайте? </a></h4>
+                                          </div>
+                                          <div aria-labelledby="heading8" class="panel-collapse collapse" id="collapse8" role="tabpanel" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                              <div class="panel-body" itemprop="text">
+                                                  Для подачи заявки на внесение изменений на сайте необходимо написать письмо на email
+                                                  поддержки с указанием в теме письма домена сайта и подробным описанием вносимых изменений.
+                                              </div>
+                                          </div>
+                                      </div>
+
+                                      <div class="panel panel-default panel_close" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                                          <div class="panel-heading" id="heading10" role="tab">
+                                              <h4 class="panel-title" itemprop="name">
+                                                  <a class="panel-btn" aria-controls="collapse10" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapse10" role="button">
+                                                      Как подать заявку на добавление пользователя, изменение настроек веб-сервера
+                                                      и других задач по администрированию?
+                                                  </a>
+                                              </h4>
+                                          </div>
+                                          <div aria-labelledby="heading10" class="panel-collapse collapse" id="collapse10" role="tabpanel" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                              <div class="panel-body" itemprop="text">
+                                                  Для любых задач по администрированию необходимо написать письмо на email поддержки с
+                                                  указанием домена сайта и описанием задачи.
+                                              </div>
+                                          </div>
+                                      </div>
+
+                                      <div class="panel panel-default panel_close" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                                          <div class="panel-heading" id="heading11" role="tab">
+                                              <h4 class="panel-title" itemprop="name"><a class="panel-btn" aria-controls="collapse11" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapse11" role="button">В течение какого времени начинается работа по заявке? </a></h4>
+                                          </div>
+                                          <div aria-labelledby="heading11" class="panel-collapse collapse" id="collapse11" role="tabpanel" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                              <div class="panel-body" itemprop="text">
+                                                  Время реакции зависит типа заявки и от выбранного тарифного плана. Время реакции на сбои,
+                                                  обнаруживаемые системой мониторинга, от 2-х часов в рабочее время. Время реакции на заявки по доработке сайта
+                                                  от 24-х часов в рабочее время. Время реакции может быть более гибко определено в SLA.
+                                              </div>
+                                          </div>
+                                      </div>
+
+                                      <div class="panel panel-default panel_close" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                                          <div class="panel-heading" id="heading13" role="tab">
+                                              <h4 class="panel-title" itemprop="name"><a class="panel-btn" aria-controls="collapse13" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapse13" role="button">В какое время работает поддержка? </a></h4>
+                                          </div>
+                                          <div aria-labelledby="heading13" class="panel-collapse collapse" id="collapse13" role="tabpanel" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                              <div class="panel-body" itemprop="text">Время работы поддержки с 10 до 18 часов (MSK, GMT+3) в рабочие дни. Мы также можем выполнять работы сверхурочно по договоренности с оплатой по двойной ставке часа.</div>
+                                          </div>
+                                      </div>
+
+                                      <div class="panel panel-default panel_close" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                                          <div class="panel-heading" id="heading14" role="tab">
+                                              <h4 class="panel-title" itemprop="name">
+                                                  <a class="panel-btn" aria-controls="collapse14" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapse14" role="button">
+                                                      Подходят ли услуги поддержки, если необходимо произвести обновление ядра
+                                                      Drupal или модулей?
+                                                  </a>
+                                              </h4>
+                                          </div>
+                                          <div aria-labelledby="heading14" class="panel-collapse collapse" id="collapse14" role="tabpanel" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                              <div class="panel-body" itemprop="text">
+                                                  Обновление безопасности в рамках одной ветки Drupal делается в режиме поддержки на всех
+                                                  тарифных планах. Обновление, связанное с переходом на следующую ветку Drupal, например апгрейд с 6.х на 7.х,
+                                                  лучше делать в рамках отдельного проекта, стоимость и сроки которого мы можем предложить после проведения
+                                                  аудита апгрейда. Аудит апгрейда включает в себя анализ путей миграции и трудоемкости обновления для всех
+                                                  модулей, блоков кода, Views, тем оформления, стоит от 6500 рублей и, как правило, занимает 1-3 дня, в
+                                                  зависимости от размера сайта.
+                                              </div>
+                                          </div>
+                                      </div>
+
+                                      <div class="panel panel-default panel_close" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                                          <div class="panel-heading" id="heading15" role="tab">
+                                              <h4 class="panel-title" itemprop="name"><a class="panel-btn" aria-controls="collapse15" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapse15" role="button">Можно ли пообщаться со специалистом голосом или в мессенджере? </a></h4>
+                                          </div>
+                                          <div aria-labelledby="heading15" class="panel-collapse collapse" id="collapse15" role="tabpanel" itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                              <div class="panel-body" itemprop="text">
+                                                  Для этого нужно написать заявку на
+                                                  консультацию на email поддержки и сообщить удобное время и контактные данные.
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </section>
+
+
+              </div>
+
+
+              <footer class="footer" role="contentinfo">
+                  <div class=" container">
+                      <div class="region region-footer">
+
+                          <section id="block-podderzhkasaytovkontaktnayaforma" class="block block-block-content block-block-contentaf0b0005-c219-441b-a07a-c00a51d93bf4 clearfix">
+                              <div class="row">
+
+                                  <div class="col-md-6 col-xs-12 col-sm-6">
+                                      <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item">
+                                          <div class="block-form-wrapper">
+                                              <div class="block-form-title">Оставить заявку на <br>разработку или доработку сайта</div>
+
+                                              <div class="block-form-description">Нужно доработать функционал готового сайта на Drupal или создать новый? Оценить разработку под ваше ТЗ? Просто оставьте заявку и наш менеджер свяжется с вами для уточнения деталей!</div>
+
+                                              <div class="block-form-contacts">
+                                                  <ul>
+                                                      <li class="block-form-phone"><a href="tel:88002222673">8 800 222-26-73</a></li>
+                                                      <li class="block-form-email"><a href="mailto:info@drupal-coder.ru">info@drupal-coder.ru</a></li>
+                                                  </ul>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+
+                                  <div class="col-md-6 col-xs-12 col-sm-6">
+                                      <div class="field field--name-field-block-with-form-value field--type-entity-reference field--label-hidden field--item">
+                                          <form id="supportForm" action="https://formcarry.com/s/z3-AJDUQMbE">
+                                              <div class="field--type-string field--name-field-vashe-imya field--widget-string-textfield form-group js-form-wrapper form-wrapper" id="edit-field-vashe-imya-wrapper">
+                                                  <div class="form-item js-form-item form-type-textfield js-form-type-textfield form-item-field-vashe-imya-0-value js-form-item-field-vashe-imya-0-value form-group">
+                                                      <label for="edit-field-vashe-imya-0-value" class="control-label">Ваше имя</label>
+                                                      <input class="js-text-full text-full form-text required form-control" type="text" id="edit-field-vashe-imya-0-value" size="60" maxlength="255" placeholder="Ваше имя" required>
+                                                  </div>
+                                              </div>
+                                              <div class="field--type-string field--name-field-telefon field--widget-string-textfield form-group js-form-wrapper form-wrapper" id="edit-field-telefon-wrapper">
+                                                  <div class="form-item js-form-item form-type-textfield js-form-type-textfield form-item-field-telefon-0-value js-form-item-field-telefon-0-value form-group">
+                                                      <label for="edit-field-telefon-0-value" class="control-label js-form-required form-required">Телефон</label>
+                                                      <input class="js-text-full text-full form-text required form-control" type="text" id="edit-field-telefon-0-value" size="60" maxlength="255" placeholder="Телефон" required>
+                                                  </div>
+                                              </div>
+                                              <div class="field--type-email field--name-field-e-mail field--widget-email-default form-group js-form-wrapper form-wrapper" id="edit-field-e-mail-wrapper">
+                                                  <div class="form-item js-form-item form-type-email js-form-type-email form-item-field-e-mail-0-value js-form-item-field-e-mail-0-value form-group">
+                                                      <label for="edit-field-e-mail-0-value" class="control-label js-form-required form-required">E-mail</label>
+                                                      <input class="form-email required form-control" type="email" id="edit-field-e-mail-0-value" size="60" maxlength="254" placeholder="E-mail" required="required" aria-required="true">
+                                                  </div>
+                                              </div>
+                                              <div class="field--type-string-long field--name-field-vash- field--widget-string-textarea form-group js-form-wrapper form-wrapper" id="edit-field-vash-wrapper">
+                                                  <div class="form-item js-form-item form-type-textarea js-form-type-textarea form-item-field-vash--0-value js-form-item-field-vash--0-value form-group">
+                                                      <label for="edit-field-vash-0-value" class="control-label">Ваш комментарий</label>
+                                                      <div class="form-textarea-wrapper">
+                                                          <textarea class="js-text-full text-full form-textarea form-control resize-vertical" id="edit-field-vash-0-value" rows="5" cols="60" placeholder="Ваш комментарий"></textarea>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <div class="form-item js-form-item form-type-checkbox checkbox">
+                                                  <label for="edit-fz152-agreement" class="control-label option js-form-required form-required"><input required="required" class="form-checkbox required" type="checkbox" id="edit-fz152-agreement" aria-required="true"><span class="custom-checkbox"></span>Отправляя заявку, я даю согласие на <a href="privacy-policy.html" target="_blank">обработку своих персональных данных</a>.</label>
+                                              </div>
+                                              <label for="edit-submit" class="control-label" id="responseMessage"></label>
+                                              <button class="button btn" id="edit-submit">Отправить</button>
+                                          </form>
+                                      </div>
+                                  </div>
+
+                              </div>
+                          </section>
+
+                          <section id="block-copyright" class="block block-block-content block-block-content263c1cb2-b142-4488-af8e-99f92fcb7640 clearfix">
+                              <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item">
+                                  <div class="social-links">
+                                      <ul class="social-links-wrapper">
+                                          <li class="social-links-item"><a title="Вконтакте" target="_blank" href="https://vk.com/initlab"><i class="fab fa-vk"></i></a></li>
+                                          <li class="social-links-item"><a target="_blank" href="https://teleg.one/initlabbot" title="Свяжитесь с нами"><i class="fab fa-telegram-plane"></i></a></li>
+                                          <li class="social-links-item"><a title="YouTube" target="_blank" href="https://www.youtube.com/channel/UCyFEbngMB-bK2ulNtd_W43A"><i class="fab fa-youtube"></i></a></li>
+                                      </ul>
+                                  </div>
+                                  <p>
+                                      ООО «Инитлаб», Краснодар, Россия.
+                                      <a class="goal__tel" href="tel:+78002222673">8 800 222-26-73</a><br>
+                                      Drupal является зарегистрированной торговой маркой Dries Buytaert.
+                                  </p>
+
+                              </div>
+                          </section>
+
+                      </div>
+                  </div>
+              </footer>
+
+          </div>
+      </div>
+
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+
+      <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/1","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"ru"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"antibot\/antibot.form,blazy\/blazy,blazy\/classlist,blazy\/load,blazy\/loading,blazy\/polyfill,blazy\/promise,blazy\/raf,blazy\/webp,bootstrap\/theme,bootstrap_dc\/bootstrap-scripts,bootstrap_dc\/dc,bootstrap_dc\/global-styling,bootstrap_dc\/seo,captcha\/base,colorbox\/default,colorbox_inline\/colorbox_inline,colorbox_load\/colorbox_load,core\/drupal.dialog.ajax,core\/drupal.form,core\/internal.jquery.form,geshifilter\/geshifilter,google_analytics\/google_analytics,ng_lightbox\/ng_lightbox,recaptcha_v3\/recaptcha_v3,slick\/slick.load,system\/base,views\/views.module","theme":"bootstrap_dc","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"https:\/\/drupal-coder.ru\/support?utm_source=yandex\u0026utm_medium=cpc\u0026utm_campaign=podderzhka_drupal_poisk_ya\u0026utm_content=general\u0026utm_term=%7Bkeyword%7D\u0026ajax_form=1":true},"colorbox":{"opacity":"0.85","current":"{current} \u0438\u0437 {total}","previous":"\u00ab \u041f\u0440\u0435\u0434\u044b\u0434\u0443\u0449\u0438\u0439","next":"\u0421\u043b\u0435\u0434\u0443\u044e\u0449\u0438\u0439 \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"google_analytics":{"account":"UA-87805467-1","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":true},"bootstrap":{"forms_has_error_value_toggle":1},"field_group":{"html_element":{"mode":"default","context":"view","settings":{"classes":"col-md-6 col-xs-12 col-sm-6","id":"","element":"div","show_label":false,"label_element":"h3","attributes":"","effect":"none","speed":"fast"}}},"antibot":{"forms":{"contact-message-order-support-form":{"id":"contact-message-order-support-form","key":"Wsrzz6SXvcv1gMScrKM2Uyv0zoqwUbAQrvERx9vy4kk"}}},"ajax":{"edit-captcha-response":{"callback":"recaptcha_v3_ajax_callback","event":"change","url":"https:\/\/drupal-coder.ru\/support?utm_source=yandex\u0026utm_medium=cpc\u0026utm_campaign=podderzhka_drupal_poisk_ya\u0026utm_content=general\u0026utm_term=%7Bkeyword%7D\u0026ajax_form=1","httpMethod":"POST","dialogType":"ajax","submit":{"_triggering_element_name":"captcha_response"}}},"blazy":{"loadInvisible":false,"offset":100,"saveViewportOffsetDelay":50,"loader":true,"unblazy":false,"visibleClass":false},"blazyIo":{"disconnect":false,"rootMargin":"0px","threshold":[0,0.25,0.5,0.75,1]},"slick":{"accessibility":true,"adaptiveHeight":false,"autoplay":false,"pauseOnHover":true,"pauseOnDotsHover":false,"pauseOnFocus":true,"autoplaySpeed":3000,"arrows":true,"downArrow":false,"downArrowTarget":"","downArrowOffset":0,"centerMode":true,"centerPadding":"50px","dots":false,"dotsClass":"slick-dots","draggable":true,"fade":false,"focusOnSelect":false,"infinite":true,"initialSlide":0,"lazyLoad":"ondemand","mouseWheel":false,"randomize":false,"rtl":false,"rows":1,"slidesPerRow":1,"slide":"","slidesToShow":1,"slidesToScroll":1,"speed":500,"swipe":true,"swipeToSlide":false,"edgeFriction":0.34999999999999998,"touchMove":true,"touchThreshold":5,"useCSS":true,"cssEase":"ease","cssEaseBezier":"","cssEaseOverride":"","useTransform":true,"easing":"linear","variableWidth":false,"vertical":false,"verticalSwiping":false,"waitForAnimate":true},"user":{"uid":0,"permissionsHash":"996b28be3308c9132b66032dd590989cbde39532c52c2b44dcb008b5bfd5c7b8"}}</script>
+      <script src="sites/default/files/jss1/js_1.js?scope=footer&amp;delta=1&amp;language=ru&amp;theme=bootstrap_dc&amp;include=eJxtUlGWgyAMvBCVjz2QL2KkdKNxSWzrnn6poMW-_YHMTEjCgOOI9vazYFyNY-LY8dP2OMBCmogk8uTwkNowUZjQfuCc2cdlBmrmyD6iyPsQMfT2hIxn9oQtTECrBif2kzCTbyn4q74GqmIjqyiOtgNB0zGraITZgmoM3aIoFalXHKuktnfWE3dAF9E1ze3P2gEu4mKYVc5y785YkI1HuYYhkGK0VXzyY-A4Gpg0dKy27Jl0MKu7Qr5LxALb-1dxozm4s1qD3CpMqWuyrslPmcvfAz7Ebmszcr9Q8oLgd7X9thWQjcw8aAK6C1XSq8jMcZeelcSdYLynO5dTgd9RM2IfYK--2VHA6xNsD3CgEs5MazJxz3MEIhRk75w-1xiOgSMMJXpgN5uU6L7ttpZ4u1xFN1un_yxrl3B6tTQ3sW_gBs8_n9I4HA"></script>
+      <script src="sites/default/files/jss1/js_2.js?scope=footer&amp;delta=2&amp;language=ru&amp;theme=bootstrap_dc&amp;include=eJxtUlGWgyAMvBCVjz2QL2KkdKNxSWzrnn6poMW-_YHMTEjCgOOI9vazYFyNY-LY8dP2OMBCmogk8uTwkNowUZjQfuCc2cdlBmrmyD6iyPsQMfT2hIxn9oQtTECrBif2kzCTbyn4q74GqmIjqyiOtgNB0zGraITZgmoM3aIoFalXHKuktnfWE3dAF9E1ze3P2gEu4mKYVc5y785YkI1HuYYhkGK0VXzyY-A4Gpg0dKy27Jl0MKu7Qr5LxALb-1dxozm4s1qD3CpMqWuyrslPmcvfAz7Ebmszcr9Q8oLgd7X9thWQjcw8aAK6C1XSq8jMcZeelcSdYLynO5dTgd9RM2IfYK--2VHA6xNsD3CgEs5MazJxz3MEIhRk75w-1xiOgSMMJXpgN5uU6L7ttpZ4u1xFN1un_yxrl3B6tTQ3sW_gBs8_n9I4HA"></script>
+      <script src="sites/default/files/jss1/js_3.js?scope=footer&amp;delta=3&amp;language=ru&amp;theme=bootstrap_dc&amp;include=eJxtUlGWgyAMvBCVjz2QL2KkdKNxSWzrnn6poMW-_YHMTEjCgOOI9vazYFyNY-LY8dP2OMBCmogk8uTwkNowUZjQfuCc2cdlBmrmyD6iyPsQMfT2hIxn9oQtTECrBif2kzCTbyn4q74GqmIjqyiOtgNB0zGraITZgmoM3aIoFalXHKuktnfWE3dAF9E1ze3P2gEu4mKYVc5y785YkI1HuYYhkGK0VXzyY-A4Gpg0dKy27Jl0MKu7Qr5LxALb-1dxozm4s1qD3CpMqWuyrslPmcvfAz7Ebmszcr9Q8oLgd7X9thWQjcw8aAK6C1XSq8jMcZeelcSdYLynO5dTgd9RM2IfYK--2VHA6xNsD3CgEs5MazJxz3MEIhRk75w-1xiOgSMMJXpgN5uU6L7ttpZ4u1xFN1un_yxrl3B6tTQ3sW_gBs8_n9I4HA"></script>
+      <script src="sites/default/files/jss1/js_4.js?scope=footer&amp;delta=5&amp;language=ru&amp;theme=bootstrap_dc&amp;include=eJxtUlGWgyAMvBCVjz2QL2KkdKNxSWzrnn6poMW-_YHMTEjCgOOI9vazYFyNY-LY8dP2OMBCmogk8uTwkNowUZjQfuCc2cdlBmrmyD6iyPsQMfT2hIxn9oQtTECrBif2kzCTbyn4q74GqmIjqyiOtgNB0zGraITZgmoM3aIoFalXHKuktnfWE3dAF9E1ze3P2gEu4mKYVc5y785YkI1HuYYhkGK0VXzyY-A4Gpg0dKy27Jl0MKu7Qr5LxALb-1dxozm4s1qD3CpMqWuyrslPmcvfAz7Ebmszcr9Q8oLgd7X9thWQjcw8aAK6C1XSq8jMcZeelcSdYLynO5dTgd9RM2IfYK--2VHA6xNsD3CgEs5MazJxz3MEIhRk75w-1xiOgSMMJXpgN5uU6L7ttpZ4u1xFN1un_yxrl3B6tTQ3sW_gBs8_n9I4HA"></script>
+      <script src="sites/default/files/jss1/js_5.js?scope=footer&amp;delta=6&amp;language=ru&amp;theme=bootstrap_dc&amp;include=eJxtUlGWgyAMvBCVjz2QL2KkdKNxSWzrnn6poMW-_YHMTEjCgOOI9vazYFyNY-LY8dP2OMBCmogk8uTwkNowUZjQfuCc2cdlBmrmyD6iyPsQMfT2hIxn9oQtTECrBif2kzCTbyn4q74GqmIjqyiOtgNB0zGraITZgmoM3aIoFalXHKuktnfWE3dAF9E1ze3P2gEu4mKYVc5y785YkI1HuYYhkGK0VXzyY-A4Gpg0dKy27Jl0MKu7Qr5LxALb-1dxozm4s1qD3CpMqWuyrslPmcvfAz7Ebmszcr9Q8oLgd7X9thWQjcw8aAK6C1XSq8jMcZeelcSdYLynO5dTgd9RM2IfYK--2VHA6xNsD3CgEs5MazJxz3MEIhRk75w-1xiOgSMMJXpgN5uU6L7ttpZ4u1xFN1un_yxrl3B6tTQ3sW_gBs8_n9I4HA"></script>
+      <script src="formscript.js"></script>
+
+  </body>
+</html>
