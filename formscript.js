@@ -1,9 +1,3 @@
-//edit-field-vashe-imya-0-value
-//edit-field-telefon-0-value
-
-//contact-message-order-support-form
-//edit-submit
-
 function saveInput() {
     const formData = {
         name: $('#edit-field-vashe-imya-0-value').val(),
@@ -44,7 +38,7 @@ $(document).ready(function() {
             success: function(response) {
             	console.log(response.status);
                 if (response.status == "success") {
-                    $('#responseMessage').text('Ваше сообщение успешно отправлено!').css('color', 'cyan').show();
+                    $('#responseMessage').text('Форма отправлена, мы скоро свяжемся с вами!').css('color', 'green').show();
                     $('#supportForm')[0].reset(); // Очистка формы
                     localStorage.clear(); // Очистка LocalStorage
                 }
